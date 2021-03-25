@@ -1,0 +1,15 @@
+<button style="background-color: aqua" (click)="get()">get</button>
+
+<button style="background-color: green" (click)="add()">add</button>
+
+<ng-container *ngIf="array && array.length > 0">
+  <p *ngFor="let item of array; index as index">{{item}}
+    <button style="background-color: orange" (click)="delete(item)">delete</button>
+    <button style="background-color: red" (click)="edit(item)">edit</button>
+  </p>
+</ng-container>
+
+<ng-container *ngIf="creating">
+  <input type="text" [(ngModel)]="name">
+  <button (click)="done()">done</button>
+</ng-container>
